@@ -17,6 +17,8 @@ const teams = [
 
 const teamsNames = [];
 
+const teamsNamesAndFouls = [];
+
 for (let i = 0; i < teams.length; i++) {
     const team = teams[i];
     // genera numero di goal e falli subiti per ogni squadra
@@ -24,7 +26,12 @@ for (let i = 0; i < teams.length; i++) {
     team.receivedFouls = randomInt(10,50);
     // pusha il nome della squadra in un nuovo array di stringhe
     teamsNames.push(team.name);
+    // pusha in un altro array un nuovo oggetto che contiene 
+    // il nome e i falli della squadra
+    teamsNamesAndFouls.push({nome: team.name, receivedFouls: team.receivedFouls});
 }
 
 console.log(teams);
 console.log(teamsNames);
+console.log(teamsNamesAndFouls);
+
