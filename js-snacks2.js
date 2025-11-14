@@ -5,21 +5,26 @@ function randomInt(min, max) {
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled);
 }
 
-const squadre = [
+const teams = [
 
-    {nome: "Real Madrid", goal: 0, falliSubiti: 0},
-    {nome: "Manchester City", goal: 0, falliSubiti: 0},
-    {nome: "Bayern Monaco", goal: 0, falliSubiti: 0},
-    {nome: "Juventus", goal: 0, falliSubiti: 0},
-    {nome: "Paris Saint-Germain", goal: 0, falliSubiti: 0}
+    {name: "Real Madrid", goals: 0, receivedFouls: 0},
+    {name: "Manchester City", goals: 0, receivedFouls: 0},
+    {name: "Bayern Monaco", goals: 0, receivedFouls: 0},
+    {name: "Juventus", goals: 0, receivedFouls: 0},
+    {name: "Paris Saint-Germain", goals: 0, receivedFouls: 0}
 
 ];
 
-// genera numero di goal e falli subiti per ogni squadra
-for (let i = 0; i < squadre.length; i++) {
-    const squadra = squadre[i];
-    squadra.goal = randomInt(1,20);
-    squadra.falliSubiti = randomInt(10,50);
+const teamsNames = [];
+
+for (let i = 0; i < teams.length; i++) {
+    const team = teams[i];
+    // genera numero di goal e falli subiti per ogni squadra
+    team.goals = randomInt(1,20);
+    team.receivedFouls = randomInt(10,50);
+    // pusha il nome della squadra in un nuovo array di stringhe
+    teamsNames.push(team.name);
 }
 
-console.log(squadre);
+console.log(teams);
+console.log(teamsNames);
