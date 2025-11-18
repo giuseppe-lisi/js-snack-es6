@@ -38,12 +38,8 @@ document.getElementById("lowestWeight").innerHTML = `<div>Bici con weight minore
 let sortedBikes = bikes.toSorted(
     // passo alla arrow function i due oggetti dell'array
     // che verranno comparati
-    (a, b) => {
-    // se weight1 - weight2 = positiveNum restituisco 1 —> a > b
-    // se weight1 - weight2 = negativeNum restituisco -1 —> a < b
-    // se weight1 - weight2 = 0 restituisco 0 —> a = b
-    return a.weight-b.weight;
-});
+    (a, b) => {return a.weight-b.weight;}
+);
 
 // a questo punto mi troverò all'indice 0 dell'array di bici
 // la bici con il weight minore
